@@ -18,7 +18,9 @@ jobs:
         run: echo "Starting deployment for commit ${{ github.sha }}"
 
       - name: Sleep for 1 minute
-        run: sleep 60
+        run: |
+          echo "Sleeping for 1 minute..."
+          sleep 60
 
       - name: Print successful status
         run: |
