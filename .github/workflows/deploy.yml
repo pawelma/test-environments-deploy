@@ -5,14 +5,13 @@ on:
     branches:
       - master
 
-concurrency:
-  group: 'deploy'
-  cancel-in-progress: false
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: deploy
+    concurrency:
+      group: 'deploy'
+      cancel-in-progress: false
 
     steps:
       - name: Start deployment
